@@ -3,3 +3,6 @@ gunicorn
 scikit-learn
 pandas
 matplotlib
+seaborn
+plotly
+nltk
