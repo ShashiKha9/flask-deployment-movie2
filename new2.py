@@ -31,8 +31,8 @@ from ast import literal_eval
 # In[7]:
 
 
-movies=pd.read_csv(r'/Users/grab/Documents/temp/shashu/27 nov/tmdb_5000_movies.csv')
-credits=pd.read_csv(r'/Users/grab/Documents/temp/shashu/27 nov/tmdb_5000_credits.csv')
+movies=pd.read_csv('./tmdb_5000_movies.csv')
+credits=pd.read_csv('./tmdb_5000_credits.csv')
 movies.head(2)
 
 
