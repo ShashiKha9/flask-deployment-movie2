@@ -24,6 +24,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pandas.core.reshape.merge import merge
 from ast import literal_eval
+import  sys
 
 
 # **Loading Movies Data**
@@ -490,6 +491,11 @@ def results(movie_name):
 # In[62]:
 
 
-name = input('What is the name of movie?\n') 
-results(name)
+def get_movie_name():
+    if len(sys.argv) > 1:
+        return sys.argv[1]
+    else:
+        return input('What is the name of the movie?\n')
+
+
 

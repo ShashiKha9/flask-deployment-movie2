@@ -29,4 +29,6 @@ def recommend_movies():
 
 
 # if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=3000, debug=True)
+#  name = new2.get_movie_name()
+#  print(f"The movie name is: {name}")
+# app.run(host='0.0.0.0', port=3000, debug=True)
