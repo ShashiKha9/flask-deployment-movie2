@@ -28,7 +28,7 @@ def recommend_movies():
      return jsonify(res)
 
 
-if __name__ == '__main__':
- name = new2.get_movie_name()
- print(f"The movie name is: {name}")
-app.run()
+# if __name__ == '__main__':
+#  name = new2.get_movie_name()
+#  print(f"The movie name is: {name}")
+# app.run()
