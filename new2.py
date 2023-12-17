@@ -336,7 +336,7 @@ new['tags'][0]
 
 
 new.to_csv('final_data.csv', index=False)
-final_data = pd.read_csv(r'/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
+final_data = pd.read_csv('./assets/final_data.csv')
 final_data.head()
 
 
@@ -345,7 +345,7 @@ final_data.head()
 
 import pandas as pd
 
-pd.read_csv('/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
+pd.read_csv('./assets/final_data.csv')
 
 
 # In[52]:
@@ -353,7 +353,7 @@ pd.read_csv('/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
 
 import pandas as pd
 
-pd.read_csv('/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
+pd.read_csv('./assets/final_data.csv')
 
 
 # In[ ]:
@@ -369,7 +369,7 @@ import pandas as pd
 import scipy.sparse as sp
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-ff = pd.read_csv(r'/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
+ff = pd.read_csv('./assets/final_data.csv')
 ff
 
 
@@ -377,7 +377,7 @@ ff
 
 
 def get_data():
-    movie_data = pd.read_csv(r'/Users/grab/Documents/temp/shashu/27 nov/final_data.csv')
+    movie_data = pd.read_csv('./assets/final_data.csv')
     ##Convert the title of all the movies to lowercase letters.
     movie_data['original_title'] = movie_data['original_title'].str.lower()
     ##Return the dataset as the function’s result.
