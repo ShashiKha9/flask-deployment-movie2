@@ -5,7 +5,6 @@ from flask import Flask, request, jsonify
 # import CORS
 
 
-import recommend
 
 import new2
 
