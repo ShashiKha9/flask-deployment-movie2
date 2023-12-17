@@ -2,14 +2,14 @@ import math
 import pickle
 
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+# from flask-cors import CORS
 
 
 
 import new2
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes done
+# CORS(app)  # Enable CORS for all routes done
 
 
 
