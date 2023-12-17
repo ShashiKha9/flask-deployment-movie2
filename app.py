@@ -1,9 +1,8 @@
 import math
 import pickle
 
-import pandas as pd
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+# import CORS
 
 
 import recommend
@@ -11,7 +10,7 @@ import recommend
 import new2
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+# CORS(app)  # Enable CORS for all routes
 
 
 
@@ -31,4 +30,4 @@ def recommend_movies():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=3000, debug=True)
