@@ -8,13 +8,9 @@ from flask import Flask, request, jsonify
 
 import new2
 
+
 app = Flask(__name__)
 # CORS(app)  # Enable CORS for all routes done
-
-
-
-
-
 @app.route('/movie', methods=['GET'])
 def recommend_movies():
 
@@ -28,7 +24,7 @@ def recommend_movies():
      return jsonify(res)
 
 
-# if __name__ == '__main__':
-#  name = new2.get_movie_name()
-#  print(f"The movie name is: {name}")
-# app.run(host='0.0.0.0',debug=True,port=3000)
+if __name__ == '__main__':
+ name = new2.get_movie_name()
+ print(f"The movie name is: {name}")
+app.run(host='0.0.0.0',debug=True,port=3000)
