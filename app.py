@@ -19,7 +19,7 @@ def recommend_movies():
     print(app)
 
     if isinstance(res, float) and math.isnan(res):
-        return jsonify({"error": "Result is NaNs"})
+        return jsonify({"error": "Result is NaNss"})
     else:
      return jsonify(res)
 
