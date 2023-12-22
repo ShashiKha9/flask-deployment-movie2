@@ -14,7 +14,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return  'result'
+    return 'result'
+@app.route('/movie', methods=['GET'])
 def recommend_movies():
 
     res = new2.results(request.args.get('title'))
@@ -30,4 +31,4 @@ def recommend_movies():
 if __name__ == '__main__':
  name = new2.get_movie_name()
  print(f"The movie name is: {name}")
-app.run(debug=True,port=10000,use_reloader=False)
+app.run(host='0.0.0.0',debug=True,port=10000,use_reloader=False)
