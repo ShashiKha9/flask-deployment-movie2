@@ -11,7 +11,7 @@ import new2
 
 app = Flask(__name__)
 # CORS(app)  # Enable CORS for all routes done
-@app.route('/movie', methods=['GET'])
+@app.route('/', methods=['GET'])
 def recommend_movies():
 
     res = new2.results(request.args.get('title'))
