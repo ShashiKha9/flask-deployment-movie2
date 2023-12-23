@@ -2,7 +2,8 @@ import math
 import pickle
 
 from flask import Flask, request, jsonify, render_template
-from pip._internal import req
+from flask_cors import CORS
+
 
 # from flask-cors import CORS
 
@@ -12,24 +13,27 @@ import new2
 
 
 app = Flask(__name__)
-# CORS(app)  # /Enable CORS for all routes done
+CORS(app)  # /Enable CORS for all routes done
 # @app.route('/')
 # def index():
 #     return render_template('new2.html')
-
+movie_data=[{"Name":"Yash"}]
 @app.route('/movie/<title>', methods=['GET'])
 def recommend_movies(title):
     if request.method == 'GET':
         res = new2.results(title)
+
         print(f"shashi {res}")
         print(app)
 
         if title:
-            return jsonify(res)
+            return jsonify(movie_data)
         else:
             return jsonify({'error': 'Invalid credentials!'})
     else:
         return f'title:{title}'
+
+
 
 
 
