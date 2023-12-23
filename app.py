@@ -4,6 +4,9 @@ import pickle
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
+# import ssl
+# context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+# context.load_cert_chain('certificate.crt','private.key')
 
 # from flask-cors import CORS
 
@@ -42,4 +45,4 @@ def recommend_movies(title):
 if __name__ == '__main__':
  name = new2.get_movie_name()
  print(f"The movie name is: {name}")
-app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False )
+app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False,ssl_context=("cert.pem", "key.pem"))
