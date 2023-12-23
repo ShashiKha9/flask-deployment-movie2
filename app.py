@@ -14,9 +14,10 @@ import new2
 
 app = Flask(__name__)
 CORS(app)  # /Enable CORS for all routes done
+
 @app.route('/')
 def index():
-    return "Hello"
+        return 'Hello'
 
 @app.route('/movie/<title>', methods=['GET'])
 def recommend_movies(title):
@@ -41,4 +42,4 @@ def recommend_movies(title):
 if __name__ == '__main__':
  name = new2.get_movie_name()
  print(f"The movie name is: {name}")
-app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False)
+app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False )
