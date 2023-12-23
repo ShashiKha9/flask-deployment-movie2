@@ -1,7 +1,8 @@
 import math
 import pickle
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
+
 # from flask-cors import CORS
 
 
@@ -14,21 +15,25 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'result'
+    return render_template('new2.html')
 @app.route('/movie', methods=['GET'])
 def recommend_movies():
-
-    res = new2.results(request.args.get('title'))
+ if request.method == 'GET':
+    title=request.args['title']
+    res = new2.results(title)
     print(f"shashi {res}")
     print(app)
 
-    if isinstance(res, float) and math.isnan(res):
-        return jsonify({"error": "Result is NaNs"})
+
+    if title:
+        return jsonify(res)
     else:
-     return jsonify(res)
+        return '<h1>invalid credentials!</h1>'
+ else:
+  return  render_template('new2.html')
 
 
 if __name__ == '__main__':
  name = new2.get_movie_name()
  print(f"The movie name is: {name}")
-app.run(host='0.0.0.0',debug=True,port=10000,use_reloader=False)
+app.run(host='0.0.0.0',debug=True,port=8000,use_reloader=False)
