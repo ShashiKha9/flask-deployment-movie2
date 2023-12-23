@@ -14,20 +14,19 @@ import new2
 
 app = Flask(__name__)
 CORS(app)  # /Enable CORS for all routes done
-# @app.route('/')
-# def index():
-#     return render_template('new2.html')
-movie_data=[{"Name":"Yash"}]
+@app.route('/')
+def index():
+    return "Hello"
+
 @app.route('/movie/<title>', methods=['GET'])
 def recommend_movies(title):
     if request.method == 'GET':
         res = new2.results(title)
-
         print(f"shashi {res}")
         print(app)
 
-        if title:
-            return jsonify(movie_data)
+        if res:
+            return jsonify(res)
         else:
             return jsonify({'error': 'Invalid credentials!'})
     else:
@@ -39,7 +38,7 @@ def recommend_movies(title):
 
 
 
-# if __name__ == '__main__':
-#  name = new2.get_movie_name()
-#  print(f"The movie name is: {name}")
-# app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False)
+if __name__ == '__main__':
+ name = new2.get_movie_name()
+ print(f"The movie name is: {name}")
+app.run(host='0.0.0.0',debug=True,port=3000,use_reloader=False)
