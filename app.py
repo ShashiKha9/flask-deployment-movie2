@@ -22,7 +22,11 @@ app = Flask(__name__)
 CORS(app)  # /Enable CORS for all routes done
 
 app.config['SECRET_KEY'] = secret_key
-app.config['DEBUG'] = debug_mode.lower() == 'true'
+if debug_mode is not None:
+    app.config['DEBUG'] = debug_mode.lower() == 'true'
+else:
+    # Handle the case when debug_mode is None (e.g., set a default value)
+    app.config['DEBUG'] = False  # Or any other default value you want
 app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 
 @app.route('/')
