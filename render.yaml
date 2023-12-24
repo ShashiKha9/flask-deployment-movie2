@@ -4,7 +4,7 @@ services:
   - name: app
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app -w 4 -b 0.0.0.0:10000
     healthCheckPath: /movie/<title>
     disk:
       name: data
@@ -17,4 +17,4 @@ services:
     envVarsFromFiles:
       - .env
     ports:
-      - 8080
+      - 10000
