@@ -45,7 +45,7 @@ def recommend_movies(title):
         if res:
             return jsonify(res)
         else:
-            return jsonify({'error': 'Invalid credentials!'})
+            return jsonify({'error': 'Invalisaxdsad credentials!ss'})
     else:
         return f'title:{title}'
 
