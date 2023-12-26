@@ -13,7 +13,7 @@ services:
       - key: SECRET_KEY
         fromFile: .env
       - key: DEBUG
-        value: "False"
+        value: "True"
     envVarsFromFiles:
       - .env
     ports:
