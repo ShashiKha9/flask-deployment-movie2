@@ -17,4 +17,4 @@ services:
     envVarsFromFiles:
       - .env
     ports:
-      - 8080
+      - 10000

@@ -45,7 +45,7 @@ def recommend_movies(title):
         if res:
             return jsonify(res)
         else:
-            return jsonify({'error': 'Invalisaxdsad credentials!ss'})
+            return jsonify({'error': 'Invalid credentials!ss'})
     else:
         return f'title:{title}'
 
@@ -58,4 +58,4 @@ def recommend_movies(title):
 if __name__ == '__main__':
  name = new2.get_movie_name()
  print(f"The movie name is: {name}")
-app.run(host='0.0.0.0',debug=True,port=8080,use_reloader=False,ssl_context=("cert.pem", "key.pem"))
+app.run(host='0.0.0.0',debug=True,port=10000,use_reloader=False,ssl_context=("cert.pem", "key.pem"))
